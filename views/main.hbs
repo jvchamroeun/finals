@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../main.css">
+
+
+</head>
+
+
+
+<body>
+{{>nav}}
+
+<center>
+    <header class="island">
+        <h1>Image Gallery</h1>
+        <form class="search" action="/input" method="POST" role="search">
+            <label for="query">Search:</label>
+            <input type="search" name="query" id="query" placeholder="Search" required />
+            <input type="submit" value="Search" />
+            
+            {{#each output}}
+                <li><img src="{{this}}" alt="image"></li>
+            {{/each}}
+
+        </form>
+    </header>
+
+</center>
+</body>
+</html>
